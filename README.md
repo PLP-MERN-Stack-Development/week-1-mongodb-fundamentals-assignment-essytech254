@@ -45,3 +45,91 @@ Your work will be automatically submitted when you push to your GitHub Classroom
 - [MongoDB Documentation](https://docs.mongodb.com/)
 - [MongoDB University](https://university.mongodb.com/)
 - [MongoDB Node.js Driver](https://mongodb.github.io/node-mongodb-native/) 
+
+## Assignment Explanation
+## Running MongoDB Query Scripts
+## Overview
+1. This project contains MongoDB queries and commands to:
+
+2. Find, update, and delete book documents
+
+3. Use projections, sorting, and pagination
+
+4. Perform aggregations
+
+5. Create indexes
+
+6. Analyze query performance with .explain()
+## 🚀 How to Run the Queries
+1. Start the Mongo Shell
+```
+mongosh
+```
+Or connect to your remote MongoDB instance:
+```
+mongosh "your-mongo-uri"
+```
+
+### 2. Switch to Your Database
+```js
+use yourDatabaseName
+```
+
+### 3. Run the Queries
+
+Copy and paste each block of code into the Mongo shell or script file and run it. For example:
+
+#### Find books by genre:
+```js
+db.books.find({ genre: "Fiction" })
+```
+
+#### Update book price:
+```js
+db.books.updateOne({ title: "Becoming" }, { $set: { price: 15.99 } })
+```
+
+#### Aggregation example:
+```js
+db.books.aggregate([
+  {
+    $group: {
+      _id: "$genre",
+      averagePrice: { $avg: "$price" }
+    }
+  }
+])
+```
+
+#### Create an index:
+```js
+db.books.createIndex({ title: 1 })
+```
+
+#### Use .explain() to analyze performance:
+```js
+db.books.find({ genre: "Fiction" }).explain("executionStats")
+```
+
+## File Structure (if saved in a `.js` file)
+You can place your scripts in a file, e.g., `mongoQueries.js`, and load it like this:
+
+```bash
+mongosh < mongoQueries.js
+```
+
+Make sure the file uses valid JavaScript syntax and connects to the right database.
+
+## Notes
+- Replace `"yourDatabaseName"` with the actual name of your MongoDB database.
+- Use `db.books` or `db.movies` depending on your collection name.
+- You can modify values in queries (e.g., author name, title, year) as needed.
+- Use `.pretty()` for more readable output:
+```js
+db.books.find({ genre: "Fiction" }).pretty()
+```
+
+---
+## A screenshot of MongoDB Compass showing collections and sample data
+![MongoDB compass Screenshot](\images\compass.png)
+![MongoDB sample data Screenshot](\images\sample.png)

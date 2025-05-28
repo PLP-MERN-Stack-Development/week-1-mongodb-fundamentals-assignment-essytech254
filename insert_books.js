@@ -1,4 +1,99 @@
-// insert_books.js - Script to populate MongoDB with sample book data
+// Task 1
+// creating a plp_bookstore database and a books collection
+// This script connects to a MongoDB database, creates a collection, and inserts sample book data into it.
+// Task 2
+// basic CRUD operations
+db.books.insertMany([{
+    title: "It ends with us",
+    author: "Collen Hover",
+    genre:"fictional",
+    published_year: 2024, 
+    price: 15.99, 
+    in_stock: true, 
+    pages:700,
+    publisher:"simon publishers"
+}, 
+   {title: "The Silent Valley",
+    author: "Amara Collins",
+    genre: "Mystery",
+    published_year: 2021,
+    price: 12.99,
+    in_stock: true,
+    pages: 368,
+    publisher: "Harper & West"
+  },
+   {title: "The Midnight Library",
+    author: "Matt Haig",
+    genre: "Fiction",
+    published_year: 2020,
+    price: 14.99,
+    in_stock: true,
+    pages: 304,
+    publisher: "Canongate Books"
+  },
+     {title: "Atomic Habits",
+    author: "James Clear",
+    genre: "Self-help",
+    published_year: 2018,
+    price: 16.99,
+    in_stock: true,
+    pages: 320,
+    publisher: "Penguin Random House" 
+  },
+   {title: "Whispers of the Forgotten",
+    author: "Elena Mendez",
+    genre: "Historical Fiction",
+    published_year: 2022,
+    price: 18.0,
+    in_stock: true,
+    pages: 310,
+    publisher: "Maple Leaf Press"
+  },
+  {title: "The Silent Patient",
+    author: "Alex Michaelides",
+    genre: "Thriller",
+    published_year: 2019,
+    price: 15.99,
+    in_stock: true,
+    pages: 336,
+    publisher: "Celadon Books"
+  },
+   {title: "Where the Crawdads Sing",
+    author: "Delia Owens",
+    genre: "Mystery",
+    published_year: 2018,
+    price: 14.49,
+    in_stock: true,
+    pages: 384,
+    publisher: "G.P. Putnam's Sons"
+  },
+    {title: "Becoming",
+    author: "Michelle Obama",
+    genre: "Autobiography",
+    published_year: 2018,
+    price: 19.99,
+    in_stock: false,
+    pages: 448,
+    publisher: "Crown Publishing"
+},
+  { title: "Echoes in the Ice",
+    author: "Hannah Bjornsson",
+    genre: "Adventure",
+    published_year: 2017,
+    price: 11.95,
+    in_stock: true,
+    pages: 280,
+    publisher: "Northwind Publishing"
+  },
+    { title: "Between Light and Storm",
+    author: "Owen Trask",
+    genre: "Fantasy",
+    published_year: 2019,
+    price: 17.99,
+    in_stock: true,
+    pages: 452,
+    publisher: "Silver Rune Books"}]);
+
 
 // Import MongoDB client
 const { MongoClient } = require('mongodb');
