@@ -131,5 +131,5 @@ db.books.find({ genre: "Fiction" }).pretty()
 
 ---
 ## A screenshot of MongoDB Compass showing collections and sample data
-![MongoDB compass Screenshot](images\compass.png)
-![MongoDB sample data Screenshot](images\sample.png)
+![MongoDB compass Screenshot](images/compass.png)
+![MongoDB sample data Screenshot](images/sample.png)
